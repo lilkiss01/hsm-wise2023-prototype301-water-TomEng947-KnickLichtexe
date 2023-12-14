@@ -12,7 +12,7 @@ public class UiStuff : MonoBehaviour
     void Start()
     {
         startScreen = GameObject.Find("StartScreen");
-        targetSize = startScreen.transform.localScale * 5f;
+        targetSize = startScreen.transform.localScale * 7f;
         startSize = startScreen.transform.localScale;
     }
 

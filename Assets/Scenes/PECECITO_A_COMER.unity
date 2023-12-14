@@ -261,7 +261,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 60
+  m_Text: 
 --- !u!222 &283471317
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1330,8 +1330,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1254559555}
     - target: {fileID: 6860908686640727534, guid: 16d020f584408014ab1f5f4a12f64607, type: 3}
+      propertyPath: textTimeValue
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860908686640727534, guid: 16d020f584408014ab1f5f4a12f64607, type: 3}
       propertyPath: textScoreValue
-      value: 
+      value: 'Score: 0'
       objectReference: {fileID: 0}
     - target: {fileID: 6860908686640727534, guid: 16d020f584408014ab1f5f4a12f64607, type: 3}
       propertyPath: textInstruction

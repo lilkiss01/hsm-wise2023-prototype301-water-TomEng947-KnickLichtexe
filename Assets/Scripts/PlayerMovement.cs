@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
         score = 0;
         t = 0;
         timer = 0;
+        textTime.text = "60";
+        textScore.text = "Score:  0";
     }
 
     // Update is called once per frame
@@ -54,12 +56,12 @@ public class PlayerMovement : MonoBehaviour
                     transform.position = transform.position + transform.right * speed * Time.deltaTime;
                 }
 
-                t = Time.deltaTime;
+                t += Time.deltaTime;
 
-                if (t >= timer)
+                if (t >= timer && t <= 60)
                 {
                     timer++;
-                    textTime.text = timer.ToString();
+                    textTime.text = (60 - timer).ToString();
                 }
 
                 if (t > 60)
@@ -85,8 +87,8 @@ public class PlayerMovement : MonoBehaviour
             if (other.gameObject.tag == "Food")
             {
                 score++;
-                textScoreValue = "";
-                textScoreValue = textScoreValue + score;
+                textScore.text = "Score:  " + score.ToString();
+
             }
         }
 
