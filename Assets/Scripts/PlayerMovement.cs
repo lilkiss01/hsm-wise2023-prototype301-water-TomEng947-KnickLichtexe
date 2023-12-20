@@ -70,6 +70,11 @@ public class PlayerMovement : MonoBehaviour
                     textInstruction.text = textInstructionValue;
                     gotHit = true;
                 }
+
+                if (transform.position.x >= 2)
+                {
+
+                }
             }
         }
 
