@@ -580,6 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodObject: {fileID: 2799454936097333383, guid: ce42373b764a5224b8617ffe4b66f768, type: 3}
+  specialFoodObject: {fileID: 2799454936097333383, guid: e938dfbd84fe2154f8e930043514efa6, type: 3}
   spawnTime: 0.5
   maxHeight: 13
 --- !u!1 &554822627
@@ -698,7 +699,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 337595315}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -870,6 +871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodObject: {fileID: 2799454936097333383, guid: ce42373b764a5224b8617ffe4b66f768, type: 3}
+  specialFoodObject: {fileID: 2799454936097333383, guid: e938dfbd84fe2154f8e930043514efa6, type: 3}
   spawnTime: 0.3
   maxHeight: 25
 --- !u!4 &1197186513
