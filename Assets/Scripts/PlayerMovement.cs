@@ -71,9 +71,21 @@ public class PlayerMovement : MonoBehaviour
                     gotHit = true;
                 }
 
-                if (transform.position.x >= 2)
+                if (gameObject.transform.position.x > 10)
                 {
-
+                    transform.position +=  new Vector3(-20, 0, 0) ;
+                }
+                if (gameObject.transform.position.x < -10)
+                {
+                    transform.position += new Vector3(20, 0, 0);
+                }
+                if (gameObject.transform.position.y > 6.5f)
+                {
+                    transform.position += new Vector3(0, -11.5f, 0);
+                }
+                if (gameObject.transform.position.y < -5)
+                {
+                    transform.position += new Vector3(0, 11.5f, 0);
                 }
             }
         }
@@ -92,6 +104,13 @@ public class PlayerMovement : MonoBehaviour
             if (other.gameObject.tag == "Food")
             {
                 score++;
+                textScore.text = "Score:  " + score.ToString();
+
+            }
+
+            if (other.gameObject.tag == "SpecialFood")
+            {
+                score += 10;
                 textScore.text = "Score:  " + score.ToString();
 
             }
