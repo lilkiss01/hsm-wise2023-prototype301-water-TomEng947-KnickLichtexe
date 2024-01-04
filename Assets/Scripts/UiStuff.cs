@@ -7,6 +7,7 @@ public class UiStuff : MonoBehaviour
     private GameObject startScreen;
     private Vector3 targetSize, startSize;
     public static bool isStarted;
+    public GameObject Aud;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class UiStuff : MonoBehaviour
             t += Time.deltaTime;
             if (t < 0.95f)
             {
-
+                Aud.SetActive(true);
                 startScreen.transform.localScale = Vector3.Lerp(startScreen.transform.localScale, targetSize, t * 2f);
             }
             else

@@ -12,6 +12,15 @@ public class PlayerMovement : MonoBehaviour
     public int spin, score, timer;
     public static bool gotHit;
 
+    public GameObject Restart;
+    public GameObject DeadParticle;
+    public GameObject FishParticle;
+    public GameObject OrcaSpawner;
+    public AudioSource Aud_Crunch;
+    public AudioSource Aud_Music;
+    public ParticleSystem foodParticleEffect;
+    public ParticleSystem DeadParticleEffect;
+
     public string textMessagesValue;
     public Text textMessages;
     public string textInstructionValue;
@@ -68,7 +77,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     textMessages.text = textMessagesValue;
                     textInstruction.text = textInstructionValue;
-                    gotHit = true;
+                    gotHit = true; 
+                    Restart.SetActive(true);
+                    OrcaSpawner.SetActive(false);
                 }
 
                 if (gameObject.transform.position.x > 10)
@@ -89,12 +100,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-
-        if (Input.GetKeyDown("r"))
-        {
-            UiStuff.isStarted = false;
-            SceneManager.LoadScene("PECECITO_A_COMER");
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -105,23 +110,41 @@ public class PlayerMovement : MonoBehaviour
             {
                 score++;
                 textScore.text = "Score:  " + score.ToString();
-
+                Aud_Crunch.Play();
+                PlayParticleEffect(foodParticleEffect);
+                FishParticle.SetActive(true);
             }
 
             if (other.gameObject.tag == "SpecialFood")
             {
                 score += 10;
                 textScore.text = "Score:  " + score.ToString();
-
+                Aud_Crunch.Play();
+                PlayParticleEffect(foodParticleEffect);
+                FishParticle.SetActive(true);
             }
         }
 
             if (other.gameObject.tag == "Enemy")
             {
+                Debug.Log("Player got hit!");
+                Restart.SetActive(true);
                 textMessages.text = textMessagesValue;
                 textInstruction.text = textInstructionValue;
-                gotHit = true;
+                gotHit = true; 
+                PlayParticleEffect(DeadParticleEffect);
+                DeadParticle.SetActive(true);
+                OrcaSpawner.SetActive(false);
+                Aud_Music.Stop();
             }
         
+    }
+
+    private void PlayParticleEffect(ParticleSystem particleEffect)
+    {
+        if (particleEffect != null)
+        {
+            particleEffect.Play();
+        }
     }
 }
