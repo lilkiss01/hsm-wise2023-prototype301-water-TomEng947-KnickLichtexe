@@ -17,9 +17,7 @@ One Paragraph of project description goes here.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on how to deploy the project on a live system.
+Game about a fish that eats prawns. It has to eat as much prawns as possible in 60 seconds. The enemies are orcas that can eat the fish. The more time passes, the more orcas appear.
 
 ### Prerequisites
 
@@ -83,12 +81,12 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 
 ## Authors
 
-  - **Billie Thompson** - *Provided README Template* -
+  - **Tom Engmann** - *First game developer* -
+  - **Philipp Siemoneit** - *Second game developer* -
+  - **Gregorius Kissing** - *Third game developer* -
+  - **Daniela Masihy** - *Game designer and last game developer* -
     [PurpleBooth](https://github.com/PurpleBooth)
 
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
 
 ## License
 
